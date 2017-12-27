@@ -1,5 +1,6 @@
 # Eagle backups
-
+*.b#[0-9]
+*.s#[0-9]
 
 # Windows files
 Thumbs.db

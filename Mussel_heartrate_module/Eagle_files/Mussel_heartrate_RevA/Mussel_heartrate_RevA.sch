@@ -226,8 +226,8 @@ chip</description>
 <wire x1="-1.473" y1="-0.483" x2="-1.473" y2="0.483" width="0.0508" layer="39"/>
 <smd name="1" x="-0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
 <smd name="2" x="0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
-<text x="-0.635" y="0.762" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-0.635" y="0.762" size="0.6096" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<text x="-0.635" y="-1.27" size="0.6096" layer="27" font="vector" ratio="12">&gt;VALUE</text>
 <rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
 <rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
@@ -345,8 +345,6 @@ chip</description>
 </package>
 <package name="R0402">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
-<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
-<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
 <wire x1="-1.473" y1="0.483" x2="1.473" y2="0.483" width="0.0508" layer="39"/>
 <wire x1="1.473" y1="0.483" x2="1.473" y2="-0.483" width="0.0508" layer="39"/>
 <wire x1="1.473" y1="-0.483" x2="-1.473" y2="-0.483" width="0.0508" layer="39"/>
@@ -355,9 +353,15 @@ chip</description>
 <smd name="2" x="0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
 <text x="-0.635" y="0.635" size="0.8128" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <text x="-0.635" y="-1.27" size="0.8128" layer="27" font="vector" ratio="12">&gt;VALUE</text>
-<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
-<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.508" y1="0.254" x2="-0.254" y2="-0.127" width="0.127" layer="51"/>
+<wire x1="-0.254" y1="-0.127" x2="0" y2="0.254" width="0.127" layer="51"/>
+<wire x1="0" y1="0.254" x2="0.254" y2="-0.127" width="0.127" layer="51"/>
+<wire x1="0.254" y1="-0.127" x2="0.508" y2="0.254" width="0.127" layer="51"/>
+<wire x1="0.508" y1="0.254" x2="0.762" y2="0" width="0.127" layer="51"/>
+<wire x1="-0.508" y1="0.254" x2="-0.762" y2="0" width="0.127" layer="51"/>
+<wire x1="0.762" y1="0" x2="0.889" y2="0" width="0.127" layer="51"/>
+<wire x1="-0.762" y1="0" x2="-0.889" y2="0" width="0.127" layer="51"/>
 </package>
 <package name="MSOP8">
 <description>&lt;b&gt;Micro Small Outline Package&lt;/b&gt; Grid .65mm&lt;p&gt;
@@ -467,9 +471,9 @@ PGND is power ground for LEDs. VDD should be 1.8V supply, while VLED+ can be up 
 <pin name="R_DRV" x="-17.78" y="-5.08" length="middle"/>
 <pin name="IR_DRV" x="-17.78" y="-10.16" length="middle"/>
 <pin name="G_DRV" x="-17.78" y="-15.24" length="middle"/>
-<pin name="VLED+1" x="16.51" y="-10.16" length="middle" direction="pwr" rot="R180"/>
-<pin name="VLED+2" x="16.51" y="-5.08" length="middle" direction="pwr" rot="R180"/>
-<pin name="VDD" x="16.51" y="0" length="middle" direction="pwr" rot="R180"/>
+<pin name="VLED+1" x="16.51" y="-10.16" length="middle" direction="sup" rot="R180"/>
+<pin name="VLED+2" x="16.51" y="-5.08" length="middle" direction="sup" rot="R180"/>
+<pin name="VDD" x="16.51" y="0" length="middle" direction="sup" rot="R180"/>
 <pin name="GND" x="16.51" y="5.08" length="middle" direction="pwr" rot="R180"/>
 <pin name="!INT" x="16.51" y="10.16" length="middle" rot="R180"/>
 <text x="-10.16" y="12.7" size="2.1844" layer="95">&gt;NAME</text>
@@ -515,14 +519,14 @@ PGND is power ground for LEDs. VDD should be 1.8V supply, while VLED+ can be up 
 <description>&lt;b&gt;TCA9517 voltage regulator&lt;/b&gt;&lt;p&gt;
 Texas Instruments TCA9517 voltage regulator
 Available in SOIC-8 and 8-VSSOP (8-MSOP) packages</description>
-<pin name="VCCA" x="-15.24" y="7.62" length="middle" direction="pwr"/>
+<pin name="VCCA" x="-15.24" y="7.62" length="middle" direction="sup"/>
 <pin name="SCLA" x="-15.24" y="2.54" length="middle"/>
 <pin name="SDAA" x="-15.24" y="-2.54" length="middle"/>
 <pin name="GND" x="-15.24" y="-7.62" length="middle" direction="pwr"/>
 <pin name="EN" x="15.24" y="-7.62" length="middle" rot="R180"/>
 <pin name="SDAB" x="15.24" y="-2.54" length="middle" rot="R180"/>
 <pin name="SCLB" x="15.24" y="2.54" length="middle" rot="R180"/>
-<pin name="VCCB" x="15.24" y="7.62" length="middle" direction="pwr" rot="R180"/>
+<pin name="VCCB" x="15.24" y="7.62" length="middle" direction="sup" rot="R180"/>
 <wire x1="-10.16" y1="10.16" x2="10.16" y2="10.16" width="0.4064" layer="94"/>
 <wire x1="10.16" y1="10.16" x2="10.16" y2="-10.16" width="0.4064" layer="94"/>
 <wire x1="10.16" y1="-10.16" x2="-10.16" y2="-10.16" width="0.4064" layer="94"/>
@@ -534,7 +538,7 @@ Available in SOIC-8 and 8-VSSOP (8-MSOP) packages</description>
 <wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
 <text x="-1.016" y="3.556" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="VCC" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+<pin name="VDD" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
 <symbol name="MIC5365">
 <description>&lt;b&gt;MIC5365 voltage regulator&lt;/b&gt;
@@ -892,10 +896,10 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <part name="GND1" library="miller" deviceset="GND" device=""/>
 <part name="R1" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
 <part name="R2" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
-<part name="SUPPLY1" library="miller" deviceset="VCC" device=""/>
-<part name="SUPPLY2" library="miller" deviceset="VCC" device=""/>
+<part name="SUPPLY1" library="miller" deviceset="VDD" device=""/>
+<part name="SUPPLY2" library="miller" deviceset="VDD" device=""/>
 <part name="R3" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
-<part name="SUPPLY3" library="miller" deviceset="VCC" device=""/>
+<part name="SUPPLY3" library="miller" deviceset="VDD" device=""/>
 <part name="TCA9517" library="miller" deviceset="TCA9517" device="DGK"/>
 <part name="U$3" library="miller" deviceset="VDD" device=""/>
 <part name="U$4" library="miller" deviceset="VDD" device=""/>
@@ -911,10 +915,10 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <part name="R7" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
 <part name="SUPPLY6" library="miller" deviceset="VCC" device=""/>
 <part name="GND" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
-<part name="SCLB" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
-<part name="SDAB" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
+<part name="SCL" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
+<part name="SDA" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
 <part name="VCC" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
-<part name="!INT" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
+<part name="!INT" library="miller" deviceset="PINHD-1X1" device="0.7MM_DRILL" value="PINHD-1X10.7MM_DRILL"/>
 <part name="GND4" library="miller" deviceset="GND" device=""/>
 <part name="C3" library="miller" deviceset="CAP" device="0402" value="1µF"/>
 <part name="C4" library="miller" deviceset="CAP" device="0402" value="1µF"/>
@@ -953,8 +957,8 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <instance part="R7" gate="G$1" x="83.82" y="111.76" rot="R90"/>
 <instance part="SUPPLY6" gate="G$1" x="83.82" y="119.38"/>
 <instance part="GND" gate="G$1" x="96.52" y="53.34" rot="R90"/>
-<instance part="SCLB" gate="G$1" x="101.6" y="53.34" rot="R90"/>
-<instance part="SDAB" gate="G$1" x="106.68" y="53.34" rot="R90"/>
+<instance part="SCL" gate="G$1" x="101.6" y="53.34" rot="R90"/>
+<instance part="SDA" gate="G$1" x="106.68" y="53.34" rot="R90"/>
 <instance part="VCC" gate="G$1" x="111.76" y="53.34" rot="R90"/>
 <instance part="!INT" gate="G$1" x="116.84" y="53.34" rot="R90"/>
 <instance part="GND4" gate="1" x="96.52" y="40.64"/>
@@ -971,34 +975,45 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <segment>
 <pinref part="TCA9517" gate="G$1" pin="VCCA"/>
 <wire x1="129.54" y1="93.98" x2="129.54" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="VCC"/>
+<pinref part="U$3" gate="G$1" pin="VDD"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="129.54" y1="104.14" x2="124.46" y2="104.14" width="0.1524" layer="91"/>
 <junction x="129.54" y="104.14"/>
+<label x="129.54" y="99.06" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="7.62" y1="99.06" x2="7.62" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
+<pinref part="SUPPLY1" gate="G$1" pin="VDD"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="17.78" y1="99.06" x2="17.78" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
+<pinref part="SUPPLY2" gate="G$1" pin="VDD"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="60.96" y1="99.06" x2="60.96" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
+<pinref part="SUPPLY3" gate="G$1" pin="VDD"/>
 </segment>
 <segment>
 <pinref part="MAX30105" gate="G$1" pin="VDD"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="55.88" y1="76.2" x2="71.12" y2="76.2" width="0.1524" layer="91"/>
 <label x="68.58" y="76.2" size="1.778" layer="95"/>
-<pinref part="U$4" gate="G$1" pin="VCC"/>
+<pinref part="U$4" gate="G$1" pin="VDD"/>
 <wire x1="71.12" y1="76.2" x2="71.12" y2="81.28" width="0.1524" layer="91"/>
 <junction x="71.12" y="76.2"/>
+</segment>
+<segment>
+<pinref part="MIC53565" gate="G$1" pin="VOUT"/>
+<wire x1="101.6" y1="81.28" x2="101.6" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="VDD"/>
+<wire x1="101.6" y1="73.66" x2="104.14" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="101.6" y1="81.28" x2="114.3" y2="81.28" width="0.1524" layer="91"/>
+<junction x="101.6" y="81.28"/>
+<label x="101.6" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1036,6 +1051,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <wire x1="124.46" y1="96.52" x2="119.38" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="96.52" x2="119.38" y2="88.9" width="0.1524" layer="91"/>
 <junction x="119.38" y="88.9"/>
+<label x="114.3" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="MIC53565" gate="G$1" pin="GND"/>
@@ -1098,7 +1114,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <wire x1="170.18" y1="88.9" x2="170.18" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SCLB" gate="G$1" pin="P$1"/>
+<pinref part="SCL" gate="G$1" pin="P$1"/>
 <wire x1="101.6" y1="48.26" x2="101.6" y2="43.18" width="0.1524" layer="91"/>
 <label x="101.6" y="43.18" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -1112,7 +1128,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <wire x1="180.34" y1="83.82" x2="180.34" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SDAB" gate="G$1" pin="P$1"/>
+<pinref part="SDA" gate="G$1" pin="P$1"/>
 <wire x1="106.68" y1="48.26" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
 <label x="106.68" y="43.18" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -1145,15 +1161,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="187.96" y1="104.14" x2="200.66" y2="104.14" width="0.1524" layer="91"/>
 <junction x="187.96" y="104.14"/>
-</segment>
-<segment>
-<pinref part="MIC53565" gate="G$1" pin="VOUT"/>
-<wire x1="101.6" y1="81.28" x2="101.6" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="U$5" gate="G$1" pin="VCC"/>
-<wire x1="101.6" y1="73.66" x2="104.14" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="101.6" y1="81.28" x2="114.3" y2="81.28" width="0.1524" layer="91"/>
-<junction x="101.6" y="81.28"/>
+<label x="160.02" y="96.52" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="MIC53565" gate="G$1" pin="VIN"/>
@@ -1163,6 +1171,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <wire x1="101.6" y1="109.22" x2="101.6" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="109.22" x2="101.6" y2="109.22" width="0.1524" layer="91"/>
 <junction x="101.6" y="109.22"/>
+<label x="101.6" y="109.22" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
@@ -1175,15 +1184,16 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <label x="111.76" y="43.18" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="VREG_EN" class="0">
+<net name="TCA_EN" class="0">
 <segment>
 <pinref part="TCA9517" gate="G$1" pin="EN"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="160.02" y1="78.74" x2="187.96" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="78.74" x2="187.96" y2="93.98" width="0.1524" layer="91"/>
+<label x="172.72" y="78.74" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="VREG_EN" class="0">
 <segment>
 <pinref part="MIC53565" gate="G$1" pin="EN"/>
 <pinref part="R7" gate="G$1" pin="1"/>
@@ -1201,6 +1211,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="86.36" x2="60.96" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="86.36" x2="60.96" y2="88.9" width="0.1524" layer="91"/>
+<label x="60.96" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

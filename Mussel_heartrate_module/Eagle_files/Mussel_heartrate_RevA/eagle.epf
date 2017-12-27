@@ -1,5 +1,5 @@
 [Eagle]
-Version="07 02 00"
+Version="07 06 00"
 Platform="Windows"
 Serial="62191E841E-LSR-WLM-1EL"
 Globals="Globals"
@@ -61,7 +61,7 @@ UsedLibrary="D:/Dropbox/Eagle/Eagle_libraries_external/tyco.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="165 76 1233 1138"
+Loc="165 76 1581 1138"
 State=2
 Number=0
 

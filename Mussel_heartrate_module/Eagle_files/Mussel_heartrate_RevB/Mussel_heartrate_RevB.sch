@@ -907,13 +907,10 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <part name="R4" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
 <part name="R5" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
 <part name="GND2" library="miller" deviceset="GND" device=""/>
-<part name="R6" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
 <part name="MIC53565" library="miller" deviceset="MIC5365" device="SC-70"/>
 <part name="U$5" library="miller" deviceset="VDD" device=""/>
 <part name="SUPPLY5" library="miller" deviceset="VCC" device=""/>
 <part name="GND3" library="miller" deviceset="GND" device=""/>
-<part name="R7" library="miller" deviceset="RESISTOR_SMD" device="R0402" value="4.7k"/>
-<part name="SUPPLY6" library="miller" deviceset="VCC" device=""/>
 <part name="GND" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
 <part name="SCL" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
 <part name="SDA" library="miller" deviceset="PINHD-1X1" device="SMALL"/>
@@ -925,6 +922,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <part name="C5" library="miller" deviceset="CAP" device="0402" value="0.1µF"/>
 <part name="C6" library="miller" deviceset="CAP" device="0402" value="0.1µF"/>
 <part name="GND5" library="miller" deviceset="GND" device=""/>
+<part name="SUPPLY6" library="miller" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -949,13 +947,10 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <instance part="R4" gate="G$1" x="170.18" y="99.06" rot="R90"/>
 <instance part="R5" gate="G$1" x="180.34" y="99.06" rot="R90"/>
 <instance part="GND2" gate="1" x="127" y="73.66"/>
-<instance part="R6" gate="G$1" x="187.96" y="99.06" rot="R90"/>
 <instance part="MIC53565" gate="G$1" x="96.52" y="99.06"/>
 <instance part="U$5" gate="G$1" x="104.14" y="73.66"/>
 <instance part="SUPPLY5" gate="G$1" x="101.6" y="114.3"/>
 <instance part="GND3" gate="1" x="93.98" y="114.3"/>
-<instance part="R7" gate="G$1" x="83.82" y="111.76" rot="R90"/>
-<instance part="SUPPLY6" gate="G$1" x="83.82" y="119.38"/>
 <instance part="GND" gate="G$1" x="96.52" y="53.34" rot="R90"/>
 <instance part="SCL" gate="G$1" x="101.6" y="53.34" rot="R90"/>
 <instance part="SDA" gate="G$1" x="106.68" y="53.34" rot="R90"/>
@@ -967,6 +962,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <instance part="C5" gate="G$1" x="124.46" y="101.6" rot="R180"/>
 <instance part="C6" gate="G$1" x="200.66" y="101.6" rot="R180"/>
 <instance part="GND5" gate="1" x="200.66" y="91.44"/>
+<instance part="SUPPLY6" gate="G$1" x="86.36" y="111.76"/>
 </instances>
 <busses>
 </busses>
@@ -1155,13 +1151,16 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="170.18" y1="104.14" x2="180.34" y2="104.14" width="0.1524" layer="91"/>
 <junction x="170.18" y="104.14"/>
-<pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="187.96" y1="104.14" x2="180.34" y2="104.14" width="0.1524" layer="91"/>
 <junction x="180.34" y="104.14"/>
 <pinref part="C6" gate="G$1" pin="2"/>
-<wire x1="187.96" y1="104.14" x2="200.66" y2="104.14" width="0.1524" layer="91"/>
-<junction x="187.96" y="104.14"/>
+<wire x1="180.34" y1="104.14" x2="187.96" y2="104.14" width="0.1524" layer="91"/>
 <label x="160.02" y="96.52" size="1.778" layer="95" rot="R90"/>
+<pinref part="TCA9517" gate="G$1" pin="EN"/>
+<wire x1="187.96" y1="104.14" x2="200.66" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="78.74" x2="187.96" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="78.74" x2="187.96" y2="104.14" width="0.1524" layer="91"/>
+<label x="172.72" y="78.74" size="1.778" layer="95" rot="R180"/>
+<junction x="187.96" y="104.14"/>
 </segment>
 <segment>
 <pinref part="MIC53565" gate="G$1" pin="VIN"/>
@@ -1174,30 +1173,16 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <label x="101.6" y="109.22" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R7" gate="G$1" pin="2"/>
-<pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
-<wire x1="83.82" y1="116.84" x2="83.82" y2="119.38" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="VCC" gate="G$1" pin="P$1"/>
 <wire x1="111.76" y1="48.26" x2="111.76" y2="43.18" width="0.1524" layer="91"/>
 <label x="111.76" y="43.18" size="1.778" layer="95" rot="R90"/>
 </segment>
-</net>
-<net name="TCA_EN" class="0">
-<segment>
-<pinref part="TCA9517" gate="G$1" pin="EN"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="160.02" y1="78.74" x2="187.96" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="78.74" x2="187.96" y2="93.98" width="0.1524" layer="91"/>
-<label x="172.72" y="78.74" size="1.778" layer="95" rot="R180"/>
-</segment>
-</net>
-<net name="VREG_EN" class="0">
 <segment>
 <pinref part="MIC53565" gate="G$1" pin="EN"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="91.44" y1="106.68" x2="83.82" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="106.68" x2="86.36" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="106.68" x2="86.36" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
+<label x="86.36" y="106.68" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="!INT" class="0">

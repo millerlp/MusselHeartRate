@@ -832,7 +832,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <packages>
 </packages>
 <symbols>
-<symbol name="DOCFIELD_REVA">
+<symbol name="DOCFIELD_REVB">
 <wire x1="0" y1="0" x2="71.12" y2="0" width="0.1016" layer="94"/>
 <wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.1016" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.1016" layer="94"/>
@@ -856,7 +856,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 <text x="12.7" y="1.27" size="2.54" layer="94">&gt;LAST_DATE_TIME</text>
 <text x="72.39" y="1.27" size="2.54" layer="94">Sheet:</text>
 <text x="86.36" y="1.27" size="2.54" layer="94">&gt;SHEET</text>
-<text x="88.9" y="11.43" size="2.54" layer="94">REV: A</text>
+<text x="88.9" y="11.43" size="2.54" layer="94">REV: B</text>
 <text x="1.27" y="19.05" size="2.54" layer="94">TITLE:</text>
 <text x="1.27" y="11.43" size="2.54" layer="94">Document Number:</text>
 <text x="17.78" y="19.05" size="2.54" layer="94">&gt;DRAWING_NAME</text>
@@ -864,10 +864,10 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="DOCFIELD_REVA">
-<description>Use this for Revision A of any designs.</description>
+<deviceset name="DOCFIELD_REVB">
+<description>Revision B document label</description>
 <gates>
-<gate name="G$1" symbol="DOCFIELD_REVA" x="0" y="0"/>
+<gate name="G$1" symbol="DOCFIELD_REVB" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -890,7 +890,7 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 </classes>
 <parts>
 <part name="MAX30105" library="miller" deviceset="MAX30105" device=""/>
-<part name="U$2" library="frames_miller" deviceset="DOCFIELD_REVA" device=""/>
+<part name="U$2" library="frames_miller" deviceset="DOCFIELD_REVB" device=""/>
 <part name="C1" library="miller" deviceset="CAP" device="0402" value="10uF"/>
 <part name="C2" library="miller" deviceset="CAP" device="0402" value="4.7uF"/>
 <part name="GND1" library="miller" deviceset="GND" device=""/>
@@ -1202,6 +1202,15 @@ The SMALL_0.7 footprint is 1.056mm diameter, drill hole is 0.7mm, too small for 
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="102,1,55.88,66.04,VLED+1,VCC,,,,"/>
+<approved hash="102,1,55.88,71.12,VLED+2,VCC,,,,"/>
+<approved hash="102,1,129.54,93.98,VCCA,VDD,,,,"/>
+<approved hash="102,1,160.02,93.98,VCCB,VCC,,,,"/>
+<approved hash="104,1,21.59,76.2,MAX30105,PGND,GND,,,"/>
+<approved hash="104,1,101.6,106.68,MIC53565,VIN,VCC,,,"/>
+<approved hash="104,1,101.6,81.28,MIC53565,VOUT,VDD,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>

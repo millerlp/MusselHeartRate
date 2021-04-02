@@ -4,6 +4,9 @@
 # Picture files
 /pics/
 
+# Notes directory
+/Notes/
+
 # Eagle backups
 *.b#[1-9]
 *.s#[1-9]

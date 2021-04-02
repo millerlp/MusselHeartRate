@@ -1,0 +1,50 @@
+---
+title: "Sitka_scratch"
+author: "Luke Miller"
+date: "8/19/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r loadTestFile}
+dat = read.csv("../Data/20200821_1851_01_SN03_IR.csv")
+temps = read.csv("../Data/20200821_1851_01_SN03_TEMP.csv")
+
+```
+
+```{r}
+dat$DateTime = as.POSIXct(dat$DateTime, origin='1970-1-1')
+temps$DateTime = as.POSIXct(temps$DateTime,origin='1970-1-1')
+```
+
+```{r}
+plot(dat$Sensor5IR[0:500],type='l')
+```
+
+```{r}
+# Calculate the actual sample-to-sample time, in milliseconds
+# ideally this is whatever the user's myIntervalMS was 
+# set to (i.e. 50 milliseconds), but if something causes
+# a sampling interval to be delayed, the value may be larger
+diff(dat$startMillis) 
+plot(diff(dat$startMillis))
+```
+
+```{r plotIRHeart}
+st = 0; end = 500
+Sensor = 7
+plot(x=I(dat$startMillis[st:end]/1000), y = dat[st:end,(Sensor+3)],type='l', xlab = 'seconds',ylab='counts')
+```
+
+```{r plotTemps}
+plot(temps$DateTime,temps[,4], type = 'l',
+     ylim = c(15,35))
+for (i in 1:8){
+  lines(temps$DateTime, temps[,(i+3)], col = i)
+}
+```

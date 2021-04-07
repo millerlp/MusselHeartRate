@@ -13,6 +13,8 @@
 # Eclipse .project file
 .project
 
+/R_code/Sitka_scratch.html
+
 # Eagle backups
 *.b#[1-9]
 *.s#[1-9]

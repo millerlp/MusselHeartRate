@@ -4,8 +4,14 @@
 # Picture files
 /pics/
 
+# R figures
+/R_code/figs/
+
 # Notes directory
 /Notes/
+
+# Eclipse .project file
+.project
 
 # Eagle backups
 *.b#[1-9]

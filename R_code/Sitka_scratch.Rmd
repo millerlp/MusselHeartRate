@@ -603,10 +603,17 @@ TideBoxes = function(Exposure,DateTime, cols = c('lightblue','white')){
 
 ```
 
+TODO: I still think there's a discrepancy between the mussel time values and
+the real world. It's possible that SN05 board wasn't set to UTC time zone, but
+instead to maybe Pacific Daylight Time (UTC-7), Alaska Daylight Time (UTC-8),
+or Alaska Standard Time (UTC-9). If so, my assumption that it was UTC, and 
+then subsequently producing a UTC-9 AKST version of the timestamp would be 
+throwing off the data by several hours.  
 
 ```{r plotSN05BPM1, echo=showcode}
 png(filename = './figs/SN05_heartrates_20200919-20200921.png',
-		width = 5, height = 5, units = 'px',res=300)
+		width = 5, height = 5, units = 'in',res=300)
+par(mar = c(5,5.5,1,2))
 mypch = '.'
 mycex = 1.5
 myspan = 0.1
@@ -620,13 +627,13 @@ plot(BPMfft~DateTimeAST,
 # Trying to fix the time zone offset issue
 TideBoxes(tides$HighLow,(tides$DateTimeAST + (11*3600)))
 t1 = subset(SN05S1, BPMagreeQuality < 2, na.action = 'na.omit')
-loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 5, lwd = 2, cex = mycex, span = myspan)
+loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 4, lwd = 2, cex = mycex, span = myspan)
 t1 = subset(SN05S2, BPMagreeQuality < 2, na.action = 'na.omit')
-loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 5, lwd = 2, cex = mycex, span = myspan)
+loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 4, lwd = 2, cex = mycex, span = myspan)
 t1 = subset(SN05S3, BPMagreeQuality < 2, na.action = 'na.omit')
-loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 5, lwd = 2, cex = mycex, span = myspan)
+loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 4, lwd = 2, cex = mycex, span = myspan)
 t1 = subset(SN05S6, BPMagreeQuality < 2, na.action = 'na.omit')
-loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 5, lwd = 2, cex = mycex, span = myspan)
+loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 4, lwd = 2, cex = mycex, span = myspan)
 # Emersed mussels
 t1 = subset(SN05S4, BPMagreeQuality < 2, na.action = 'na.omit')
 loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 2, lwd = 2, cex = mycex, span = myspan)
@@ -637,11 +644,11 @@ loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 2, lwd = 2, cex = mycex, span = 
 t1 = subset(SN05S8, BPMagreeQuality < 2, na.action = 'na.omit')
 loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 2, lwd = 2, cex = mycex, span = myspan)
 
-legend('topright', legend = c('In-pool mussels','Emersed mussels'), 
-		col = c(5,2), lwd = 2, bg = 'white')
+#legend('topright', legend = c('In-pool mussels','Emersed mussels'), 
+#		col = c(4,2), lwd = 2, bg = 'white')
 legend('topright', legend = c('In-pool mussels','Emersed mussels','High Tide'), 
-		col = c(5,2, 'lightblue'), lwd = c(2,2,8), bg = 'white')
-
+		col = c(4,2, 'lightblue'), lwd = c(2,2,8), bg = 'white', cex = 0.8)
+dev.off()
 ```
 
 

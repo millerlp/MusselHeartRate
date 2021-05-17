@@ -50,8 +50,8 @@ attr(SN05$DateTimeAST,'tzone') = 'etc/GMT+9' # Create Alaska Standard Time versi
 
 Fs = 0.1 # 10Hz sampling rate, sampling interval = 0.1 seconds
 # Step through 1 minute at a time
-mytime = as.POSIXct('2020-09-20 20:15',tz='etc/GMT+9')
-
+mytime = as.POSIXct('2020-09-20 15:30',tz='etc/GMT+9')
+mysensor = 'Sensor8IR'
 t1 = which.min(abs(SN05$DateTimeAST - mytime))
 chunklength = 300 # number of samples to use
 # Test that we've hit the chosen minute (not just the closest time)
@@ -95,7 +95,7 @@ if (difftime(mytime,SN05$DateTimeAST[t1], units = 'secs') == 0){
 	diffs = diff(temp$startMillis) / 1000
 	temp$DateTimeMS[2:nrow(temp)] = temp$DateTimeMS[1] + cumsum(diffs)
 		
-	detrendedIR = detrend(temp[,'Sensor8IR'])
+	detrendedIR = detrend(temp[,mysensor])
 	
 	# Define a butterworth filter
 	# Consider using the bandpass filter rather than just a lowpass filter
@@ -118,10 +118,14 @@ if (difftime(mytime,SN05$DateTimeAST[t1], units = 'secs') == 0){
 	# Multiply by 60 seconds to get cycles (beats) per minute
 	bpm = 60 * mypeakfreq
 	# Plot the raw detrended signal
+	par(mar = c(4.5,5,5,1))
 	plot(temp$DateTimeMS, detrendedIR, type = 'l', 
 			main = paste0("Amplitude = ",round(amp,1),
 					', BPM = ', bpm), 
-			las = 1) 
+			las = 1,
+			xlab = 'Time, seconds',
+			ylab = 'Detrended IR signal') 
+	points(temp$DateTimeMS, detrendedIR, col = 1, pch = 20, cex = 0.5)
 	if (amp > 60){
 		lines(temp$DateTimeMS,y, col = 3, lwd = 2) # add the filtered signal
 #		lines(temp$DateTimeMS,y2, col = 4, lwd = 2)
@@ -146,6 +150,7 @@ if (difftime(mytime,SN05$DateTimeAST[t1], units = 'secs') == 0){
 	# you need to double the number of peaks to get bpm if your time series
 	# is only 30 seconds long
 	mtext(side = 3, line = 3, text = paste0('pracma bpm: ', nrow(res)*2))
+	mtext(side = 3, line = 4, text = paste(mysensor, mytime))
 } 
 
 
@@ -527,7 +532,7 @@ SN05S6 = SN05bpm[SN05bpm$Sensor == 'Sensor6IR',]	# submerged
 SN05S7 = SN05bpm[SN05bpm$Sensor == 'Sensor7IR',]	# emersed
 SN05S8 = SN05bpm[SN05bpm$Sensor == 'Sensor8IR',]  	# emersed
 
-# Remove questional bpm estimates based on the flag values
+# Remove questionable bpm estimates based on the flag values
 SN05S1[which(SN05S1$WeakSignalFlag == 'FAIL'),c('BPMfft','forecastBPM')] = NA
 SN05S1[which(SN05S1$forecastBPMflag == 'FAIL'),c('forecastBPM')] = NA
 
@@ -625,7 +630,7 @@ plot(BPMfft~DateTimeAST,
 		ylab = 'Heart rate (bpm)',
 		xaxs = 'i')
 # Trying to fix the time zone offset issue
-TideBoxes(tides$HighLow,(tides$DateTimeAST + (11*3600)))
+TideBoxes(tides$HighLow,(tides$DateTimeAST + (0*3600)))
 t1 = subset(SN05S1, BPMagreeQuality < 2, na.action = 'na.omit')
 loessFunc(t1$DateTimeAST, t1$forecastBPM, col = 4, lwd = 2, cex = mycex, span = myspan)
 t1 = subset(SN05S2, BPMagreeQuality < 2, na.action = 'na.omit')

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "MAXM86161_footprints")(type "KiCad")(uri "D:/Dropbox/Hardware_projects/KiCad_libraries/MAXM86161EFD_T/MAXM86161_footprints.pretty")(options "")(descr ""))
+)

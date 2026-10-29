@@ -253,7 +253,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "E"
+      "sch_revision": "E2"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -501,7 +501,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Bivalve_Bit_Heart_Discrete.kicad_pro",
+    "filename": "BVB_Heartrate_RevE2.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -747,12 +747,12 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "Bivalve_Bit_Heart_Discrete.kicad_sch",
+        "filename": "BVB_Heartrate_RevE2.kicad_sch",
         "name": "Root",
         "uuid": "d8c76c91-3368-4f7a-b431-85356751d39d"
       }
     ],
-    "used_designators": "J1,#PWR1,#PWR6-12,C1-2,D1,Q1,TP1,U1-2",
+    "used_designators": "J1,#PWR1,#PWR6-12,Q1,C1-2,D1,TP1,U1-2",
     "variants": []
   },
   "sheets": [

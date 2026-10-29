@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "BivalveBit Heart Rate Sensor")
-		(date "2026-09-30")
-		(rev "E")
+		(date "2026-10-29")
+		(rev "E2")
 		(company "Miller Lab (SDSU)")
 		(comment 1 "Charles W. Sanders")
 	)
@@ -2146,7 +2146,7 @@
 			(uuid "6bdb2667-71ae-4b6d-8a8e-050866731af8")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR09")
 					(unit 1)
@@ -2157,6 +2157,7 @@
 	(symbol
 		(lib_id "Transistor_FET:AO3401A")
 		(at 203.2 93.98 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2164,10 +2165,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1c7b6dfb-d216-486b-8d57-d57d6eae9d3a")
 		(property "Reference" "Q1"
-			(at 209.55 92.7099 0)
+			(at 209.55 95.2501 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2178,7 +2178,7 @@
 			)
 		)
 		(property "Value" "AO3401A or BSH203"
-			(at 209.55 95.2499 0)
+			(at 209.55 92.7101 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2189,7 +2189,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 208.28 95.885 0)
+			(at 208.28 92.075 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2202,7 +2202,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-			(at 208.28 97.79 0)
+			(at 208.28 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2234,7 +2234,7 @@
 			(uuid "ddcc3b9a-dea4-45d8-956e-d2c7ac7c8de8")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "Q1")
 					(unit 1)
@@ -2312,7 +2312,7 @@
 			(uuid "977dab5b-e52e-4a62-948a-76ca02935243")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR05")
 					(unit 1)
@@ -2391,7 +2391,7 @@
 			(uuid "3a89737c-7378-4601-8510-883c3e1b99be")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR010")
 					(unit 1)
@@ -2469,7 +2469,7 @@
 			(uuid "23ef6608-744d-4d25-ac5a-050569a9ce44")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR012")
 					(unit 1)
@@ -2500,7 +2500,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "100-330"
 			(at 208.28 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2551,7 +2551,7 @@
 			(uuid "1d01652d-177e-44d9-a320-3dbca89367b6")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "R2")
 					(unit 1)
@@ -2629,7 +2629,7 @@
 			(uuid "7f97ca49-f2b7-495f-adb3-45bd1e5f1f69")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR08")
 					(unit 1)
@@ -2707,7 +2707,7 @@
 			(uuid "cb4671f1-3256-4bb1-b004-d60074182334")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR02")
 					(unit 1)
@@ -2789,7 +2789,7 @@
 			(uuid "e393fe40-d476-40ff-8576-f5f06740bd28")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "R1")
 					(unit 1)
@@ -2867,7 +2867,7 @@
 			(uuid "9ea2792a-4512-4b51-b3c9-ccd1bfc85700")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR06")
 					(unit 1)
@@ -3076,7 +3076,7 @@
 			(uuid "e9e11cff-8d9d-48f3-9dc0-1ccfa490cd0c")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "U2")
 					(unit 1)
@@ -3164,7 +3164,7 @@
 			(uuid "7fab4246-d780-4498-b6d1-d55bc5ff6538")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "J1")
 					(unit 1)
@@ -3246,7 +3246,7 @@
 			(uuid "4039a160-6be0-4940-a668-7a681c7023dd")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "C1")
 					(unit 1)
@@ -3339,7 +3339,7 @@
 			(uuid "ce9f5484-cb2f-4812-a85c-a719427a6c8c")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "D1")
 					(unit 1)
@@ -3417,7 +3417,7 @@
 			(uuid "aa6e882d-0f58-47e4-b669-1d31e8cc1dd4")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR03")
 					(unit 1)
@@ -3513,7 +3513,7 @@
 			(uuid "4f2c2a54-aecb-4e04-b698-379dd2509104")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "U1")
 					(unit 1)
@@ -3591,7 +3591,7 @@
 			(uuid "b9698aae-1aaa-4cae-8c39-c4c3e9966e4a")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR011")
 					(unit 1)
@@ -3669,7 +3669,7 @@
 			(uuid "6317b491-bd0b-443b-92ab-d4469bfbf254")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR04")
 					(unit 1)
@@ -3746,7 +3746,7 @@
 			(uuid "20eb1aaf-5272-4f29-acd0-6c2a61033ced")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR07")
 					(unit 1)
@@ -3825,7 +3825,7 @@
 			(uuid "fa39f532-3213-4315-bc1d-ed29a374c446")
 		)
 		(instances
-			(project "Bivalve_Bit_Heart_Discrete"
+			(project "BVB_Heartrate_RevE2"
 				(path "/d8c76c91-3368-4f7a-b431-85356751d39d"
 					(reference "#PWR01")
 					(unit 1)
